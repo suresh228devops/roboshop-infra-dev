@@ -1,6 +1,6 @@
 module "backend_alb" {
   source = "terraform-aws-modules/alb/aws"
-
+  internal = true
   name    = "${var.project}-${var.environment}-backend-alb" # roboshop-dev-backend-alb
   vpc_id  = local.vpc_id
   subnets = local.private_subnet_ids
